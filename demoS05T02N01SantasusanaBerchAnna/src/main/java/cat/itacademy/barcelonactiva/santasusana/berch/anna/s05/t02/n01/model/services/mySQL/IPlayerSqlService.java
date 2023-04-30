@@ -2,7 +2,6 @@ package cat.itacademy.barcelonactiva.santasusana.berch.anna.s05.t02.n01.model.se
 
 import cat.itacademy.barcelonactiva.santasusana.berch.anna.s05.t02.n01.model.dto.mySQL.GameDTOSql;
 import cat.itacademy.barcelonactiva.santasusana.berch.anna.s05.t02.n01.model.dto.mySQL.PlayerDTOSql;
-
 import java.util.List;
 
 public interface IPlayerSqlService {

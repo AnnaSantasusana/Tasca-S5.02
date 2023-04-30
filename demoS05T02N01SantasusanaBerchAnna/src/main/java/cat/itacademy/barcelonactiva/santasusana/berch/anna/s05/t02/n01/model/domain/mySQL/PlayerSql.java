@@ -15,6 +15,13 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+/**
+ * La implementación de la interfaz UserDetails en la clase PlayerSql permite que los objetos de tipo PlayerSql se utilicen directamente
+ * en la configuración de Spring Security para autenticar y autorizar a los usuarios de la aplicación. Además, al proporcionar métodos
+ * para obtener el nombre de usuario, la contraseña y los roles del usuario, se asegura que Spring Security tenga la información necesaria
+ * para autenticar correctamente al usuario.
+ */
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data

@@ -23,7 +23,11 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private final JwtService jwtService;
     private final UserDetailsService userDetailsService;
 
-
+    /**
+     El propósito de este método es interceptar todas las solicitudes HTTP entrantes y validar el token JWT
+     incluido en el encabezado de autorización de cada solicitud. Garantiza que solo los usuarios autenticados
+     y autorizados puedan acceder a los recursos protegidos
+     */
     @Override
     protected void doFilterInternal(@NonNull HttpServletRequest request, @NonNull HttpServletResponse response,
                                     @NonNull FilterChain filterChain) throws ServletException, IOException {

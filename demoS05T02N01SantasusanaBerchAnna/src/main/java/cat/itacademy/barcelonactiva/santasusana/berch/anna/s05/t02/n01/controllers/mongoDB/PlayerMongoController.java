@@ -17,7 +17,7 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
-@RequestMapping("/playersMongo")
+@RequestMapping("/players/mongo")
 public class PlayerMongoController {
 
     @Autowired
@@ -127,5 +127,6 @@ public class PlayerMongoController {
             throw new Exception("Error while getting the best player", e);
         }
     }
+
 }
 

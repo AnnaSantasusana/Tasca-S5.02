@@ -94,7 +94,6 @@ public class HelperSql {
         PlayerDTOSql playerToShow = ModelMapper.singleInstance().toPlayerDTOSql(player);
         playerToShow.setSuccessRate(calculateSuccessRate(wins, totalGames));
         return playerToShow;
-
     }
 }
 

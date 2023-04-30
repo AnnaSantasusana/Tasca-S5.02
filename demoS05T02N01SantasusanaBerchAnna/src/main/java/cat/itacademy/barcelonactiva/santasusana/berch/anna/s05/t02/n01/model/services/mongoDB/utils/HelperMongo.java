@@ -11,7 +11,6 @@ import cat.itacademy.barcelonactiva.santasusana.berch.anna.s05.t02.n01.model.ser
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
@@ -59,7 +58,6 @@ public class HelperMongo {
         PlayerDTOMongo playerToShow = ModelMapper.singleInstance().toPlayerDTOMongo(player);
         playerToShow.setSuccessRate(calculateSuccessRate(wins, totalGames));
         return playerToShow;
-
     }
 
     public GameMongo rollDices(){

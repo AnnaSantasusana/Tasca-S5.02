@@ -8,7 +8,6 @@ import cat.itacademy.barcelonactiva.santasusana.berch.anna.s05.t02.n01.model.dto
 import cat.itacademy.barcelonactiva.santasusana.berch.anna.s05.t02.n01.model.dto.mongoDB.PlayerDTOMongo;
 import cat.itacademy.barcelonactiva.santasusana.berch.anna.s05.t02.n01.model.dto.mySQL.GameDTOSql;
 import cat.itacademy.barcelonactiva.santasusana.berch.anna.s05.t02.n01.model.dto.mySQL.PlayerDTOSql;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -33,10 +32,6 @@ public class ModelMapper {
 
     public PlayerDTOMongo toPlayerDTOMongo(PlayerMongo player) {
         return mapper.map(player, PlayerDTOMongo.class);
-    }
-
-    public PlayerSql toPlayerSql(PlayerDTOSql playerDTO) {
-        return mapper.map(playerDTO, PlayerSql.class);
     }
 
     public PlayerMongo toPlayerMongo(PlayerDTOMongo playerDTO) {

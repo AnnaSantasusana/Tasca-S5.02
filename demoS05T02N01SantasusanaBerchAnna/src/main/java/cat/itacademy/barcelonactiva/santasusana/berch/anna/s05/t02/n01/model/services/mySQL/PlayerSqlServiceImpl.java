@@ -4,14 +4,12 @@ import cat.itacademy.barcelonactiva.santasusana.berch.anna.s05.t02.n01.model.dom
 import cat.itacademy.barcelonactiva.santasusana.berch.anna.s05.t02.n01.model.domain.mySQL.PlayerSql;
 import cat.itacademy.barcelonactiva.santasusana.berch.anna.s05.t02.n01.model.dto.mySQL.GameDTOSql;
 import cat.itacademy.barcelonactiva.santasusana.berch.anna.s05.t02.n01.model.dto.mySQL.PlayerDTOSql;
-import cat.itacademy.barcelonactiva.santasusana.berch.anna.s05.t02.n01.model.repository.mySQL.IGameSqlRepo;
 import cat.itacademy.barcelonactiva.santasusana.berch.anna.s05.t02.n01.model.repository.mySQL.IPlayerSqlRepo;
 import cat.itacademy.barcelonactiva.santasusana.berch.anna.s05.t02.n01.model.services.ModelMapper;
 import cat.itacademy.barcelonactiva.santasusana.berch.anna.s05.t02.n01.model.services.mySQL.utils.HelperSql;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.time.LocalDateTime;
 import java.util.*;
 
 @Service
@@ -19,8 +17,6 @@ public class PlayerSqlServiceImpl implements IPlayerSqlService {
 
     @Autowired
     private IPlayerSqlRepo playerRepo;
-    @Autowired
-    private IGameSqlRepo gameRepo;
     @Autowired
     HelperSql helper;
     public static final String NO_GAMES = "No games saved";
@@ -51,9 +47,8 @@ public class PlayerSqlServiceImpl implements IPlayerSqlService {
         GameSql game = helper.rollDices();
         game.setPlayer(player);
         player.getGames().add(game);
-        GameSql gameSaved = gameRepo.save(game);
         playerRepo.save(player);
-        return ModelMapper.singleInstance().toGameDTOSql(gameSaved);
+        return ModelMapper.singleInstance().toGameDTOSql(game);
     }
 
     @Override

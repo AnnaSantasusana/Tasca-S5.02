@@ -13,9 +13,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
+/**
+ * Esta clase es un servicio en Java que se encarga de manejar la generación y validación de tokens JWT.
+ */
 @Service
 public class JwtService {
 
+    /**
+     * Esta clave secreta se utiliza para firmar y verificar los tokens JWT.
+     */
     private static final String SECRET_KEY = "294A404E635266556A586E5A7234753778214125442A472D4B6150645367566B";
 
 
@@ -41,7 +47,6 @@ public class JwtService {
                 .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 24))
                 .signWith(getSignInKey(), SignatureAlgorithm.HS256)
                 .compact();
-
     }
 
     public boolean isTokenValid(String token, UserDetails userDetails) {
